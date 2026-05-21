@@ -1,0 +1,347 @@
+/* CONFIGURAÇÕES GERAIS */
+:root {
+    --azul-escuro: #0f4c81;
+    --azul-claro: #2a9df4;
+    --coral: #e63946;
+    --texto: #333333;
+    --fundo-leve: #f8f9fa;
+    --branco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--texto);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: var(--fundo-leve);
+}
+
+h2 {
+    text-align: center;
+    color: var(--azul-escuro);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--coral);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* CABEÇALHO */
+/* BARRA SUPERIOR (TOP BAR) */
+.top-bar {
+    background-color: var(--azul-escuro); /* Usa o azul escuro padrão do logo */
+    color: var(--branco);
+    padding: 8px 0;
+    font-size: 0.85rem;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-socials a, 
+.top-bar-contact a {
+    color: var(--branco);
+    text-decoration: none;
+    margin-right: 15px;
+    transition: opacity 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Espaço entre o ícone e o texto */
+}
+
+.top-bar-socials a:last-child, 
+.top-bar-contact a:last-child {
+    margin-right: 0; /* Remove a margem sobressalente do último item */
+}
+
+.top-bar-socials a:hover, 
+.top-bar-contact a:hover {
+    opacity: 0.8; /* Dá um efeito suave ao passar o mouse */
+}
+
+/* Ajuste fino dos tamanhos dos ícones das redes sociais */
+.top-bar-socials i {
+    font-size: 1.1rem;
+}
+
+/* RESPONSIVIDADE PARA O CELULAR */
+@media (max-width: 768px) {
+    .top-bar-container {
+        flex-direction: column; /* No celular, empilha as redes sociais em cima e contatos embaixo */
+        gap: 8px;
+        text-align: center;
+    }
+    .top-bar-contact a {
+        margin: 0 8px;
+    }
+}
+
+header {
+    background-color: var(--branco);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 65px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--azul-escuro);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--coral);
+}
+
+/* HERO SECTION (BANNER PRINCIPAL COM IMAGEM LOCAL) */
+.hero {
+    /* O 'linear-gradient' cria uma camada escura transparente sobre a foto para o texto branco continuar legível */
+    background: linear-gradient(rgba(15, 76, 129, 0.85), rgba(15, 76, 129, 0.85)), 
+                url('img_VAlves/fachada_VAlves.JPG') no-repeat center center/cover;
+    color: var(--branco);
+    padding: 120px 0; /* Aumentei um pouco o espaçamento para valorizar mais a foto */
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* BOTÕES */
+.btn {
+    display: inline-block;
+    background-color: var(--coral);
+    color: var(--branco);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #c92a36;
+}
+
+.btn-secondary {
+    background-color: var(--azul-escuro);
+}
+
+.btn-secondary:hover {
+    background-color: #0b375e;
+}
+
+/* CARDS DE DESTAQUES */
+.grid-destaques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--azul-claro);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--azul-escuro);
+    margin-bottom: 15px;
+}
+
+/* SEÇÃO DE INTERESSE */
+#mensagem-alerta {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 40px 0 10px 0;
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+}
+
+footer h3 {
+    color: var(--branco);
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.sectet {
+    font-size: 0.85rem;
+    color: var(--azul-claro);
+}
+
+.governo {
+    font-weight: bold;
+    color: var(--branco);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: #888;
+}
+
+/* RESPONSIVIDADE (CELULAR) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+    }
+    
+    .nav-links li {
+        margin: 0 10px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+/* SEÇÃO DE LINKS INSTITUCIONAIS */
+.links-institucionais {
+    border-top: 1px solid #e2e8f0;
+}
+
+.grid-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Faz quebrar a linha no celular se não couber */
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.logo-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+    text-align: center;
+}
+
+.logo-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100px; /* Garante que os logos fiquem alinhados com tamanhos parecidos */
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Efeito de transição suave */
+}
+
+/* Efeito igual ao do Elementor (Elementor-animation-grow) */
+.logo-item img:hover {
+    transform: scale(1.08); /* O logo cresce levemente ao passar o mouse */
+}
+
+/* AJUSTE DE RESPONSIVIDADE PARA CELULAR */
+@media (max-width: 768px) {
+    .grid-logos {
+        flex-direction: column; /* Empilha as logos uma embaixo da outra no celular */
+        gap: 50px;
+    }
+    
+    .logo-item {
+        max-width: 200px; /* Evita que os logos fiquem gigantescos na tela do celular */
+    }
+}
